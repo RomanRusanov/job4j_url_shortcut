@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import ru.job4j.urlshortcut.domain.Code;
+import ru.job4j.urlshortcut.domain.jsonmodels.Code;
 import ru.job4j.urlshortcut.domain.Url;
 import ru.job4j.urlshortcut.services.StatisticService;
 import ru.job4j.urlshortcut.services.UrlService;
@@ -39,12 +39,14 @@ public class UrlController {
     }
 
     @GetMapping("/redirect/{code}")
-    public void redirect(@PathVariable String code, HttpServletResponse response) {
+    public ResponseEntity<Void> redirect(@PathVariable String code, HttpServletResponse response) {
         Optional<Url> url = this.urlService.findUrlByCode(code);
         if (url.isPresent()) {
             response.setStatus(302);
             response.addHeader("REDIRECT", url.get().getUrl());
             this.statisticService.updateUrlStatistic(url.get());
+            return new ResponseEntity<>(HttpStatus.valueOf(302));
         }
+        return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 }

@@ -1,6 +1,7 @@
-package ru.job4j.urlshortcut.domain;
+package ru.job4j.urlshortcut.domain.jsonmodels;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -13,6 +14,7 @@ import lombok.ToString;
 @Getter
 @ToString
 @AllArgsConstructor
+@Builder
 public class Registration {
     private final boolean registration;
     private final String login;

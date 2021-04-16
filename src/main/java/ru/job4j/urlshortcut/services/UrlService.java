@@ -3,7 +3,7 @@ package ru.job4j.urlshortcut.services;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import ru.job4j.urlshortcut.domain.Code;
+import ru.job4j.urlshortcut.domain.jsonmodels.Code;
 import ru.job4j.urlshortcut.domain.Site;
 import ru.job4j.urlshortcut.domain.Statistic;
 import ru.job4j.urlshortcut.domain.Url;

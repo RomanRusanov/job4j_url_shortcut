@@ -8,15 +8,12 @@ sudo: false
 
 install: true
 
-#script: mvn clean package -DskipTests=true
-
 services:
   postgresql
 ## Изменяет текущую временную зону.
 before_install:
   - export TZ=Europe/Moscow
   - date
-#  # JDBC создание базы данных
   - psql -c 'create database url_shortcut;' -U postgres
 
 # после выполнения сборки запустить скрипт, который будет собирать статистику по JaCoCo
@@ -27,11 +24,10 @@ env:
   global:
     - CODECOV_TOKEN="aadece00-b2a4-4944-9cc7-b6d5bba939e6"
 
-# Отправлять уведомление на почтуyouremail@smtp.ru(Изменить на свою) если сборка упала
+# Отправлять уведомление на почту youremail@smtp.ru(Изменить на свою) если сборка упала
 notifications:
   email:
     recipients:
       -roman9628@gmail.com
-    on_success: never # default: change
-    on_failure: always # default: always
-
+    on_success: never
+    on_failure: always

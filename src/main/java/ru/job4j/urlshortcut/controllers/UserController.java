@@ -3,12 +3,13 @@ package ru.job4j.urlshortcut.controllers;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import ru.job4j.urlshortcut.domain.Registration;
+import ru.job4j.urlshortcut.domain.jsonmodels.Registration;
 import ru.job4j.urlshortcut.domain.Site;
-import ru.job4j.urlshortcut.domain.SiteName;
+import ru.job4j.urlshortcut.domain.jsonmodels.SiteName;
 import ru.job4j.urlshortcut.domain.User;
 import ru.job4j.urlshortcut.services.AuthorityService;
 import ru.job4j.urlshortcut.services.SiteService;
@@ -60,6 +61,11 @@ public class UserController {
         return new ResponseEntity<>(
                 new Registration(true, username, password),
                 HttpStatus.OK);
+    }
+
+    @GetMapping("/onlyAuthenticated")
+    public ResponseEntity<Void> checkAuthentication() {
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

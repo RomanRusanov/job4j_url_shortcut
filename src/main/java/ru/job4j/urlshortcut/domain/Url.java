@@ -1,5 +1,6 @@
 package ru.job4j.urlshortcut.domain;
 
+import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -48,5 +49,9 @@ public class Url {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public String getJson() {
+        return new Gson().toJson(this);
     }
 }

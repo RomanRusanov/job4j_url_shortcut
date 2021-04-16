@@ -1,4 +1,4 @@
-package ru.job4j.urlshortcut.domain;
+package ru.job4j.urlshortcut.domain.jsonmodels;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

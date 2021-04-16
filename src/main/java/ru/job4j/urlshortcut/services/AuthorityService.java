@@ -14,7 +14,6 @@ public class AuthorityService {
 
     private final AuthoritiesRepository authoritiesRepository;
 
-
     public AuthorityService(AuthoritiesRepository authoritiesRepository) {
         this.authoritiesRepository = authoritiesRepository;
     }

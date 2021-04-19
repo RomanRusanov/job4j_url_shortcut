@@ -1,6 +1,6 @@
-[![Build Status](https://www.travis-ci.com/RomanRusanov/job4j_url_shortcut.svg?branch=main)](https://www.travis-ci.com/RomanRusanov/job4j_url_shortcut)
+[![Build Status](https://www.travis-ci.com/RomanRusanov/job4j_url_shortcut.svg?branch=master)](https://www.travis-ci.com/RomanRusanov/job4j_url_shortcut)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/08183c487b3541b7847a8e61cf342b7b)](https://www.codacy.com/gh/RomanRusanov/job4j_url_shortcut/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=RomanRusanov/job4j_url_shortcut&amp;utm_campaign=Badge_Grade)
-[![codecov](https://codecov.io/gh/RomanRusanov/job4j_url_shortcut/branch/main/graph/badge.svg)](https://codecov.io/gh/RomanRusanov/job4j_url_shortcut)
+[![codecov](https://codecov.io/gh/RomanRusanov/job4j_url_shortcut/branch/master/graph/badge.svg)](https://codecov.io/gh/RomanRusanov/job4j_url_shortcut)
 
 #Сервис - UrlShortCut
 Чтобы обеспечить безопасность пользователей, все ссылки на сайте заменяются ссылками на наш сервис.

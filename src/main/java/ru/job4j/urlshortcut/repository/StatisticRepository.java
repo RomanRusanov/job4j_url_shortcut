@@ -1,5 +1,6 @@
 package ru.job4j.urlshortcut.repository;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import ru.job4j.urlshortcut.domain.Statistic;
 
@@ -9,5 +10,7 @@ import ru.job4j.urlshortcut.domain.Statistic;
  * email roman9628@gmail.com
  */
 public interface StatisticRepository extends CrudRepository<Statistic, Long> {
-    Statistic getStatisticByUrlId(Long id);
+
+    @Query(value = "CALL updatestatistic(:urlId);", nativeQuery = true)
+    void callProcedureIncrementColumn(Long urlId);
 }

@@ -51,9 +51,8 @@ public class Site {
             inverseJoinColumns = {@JoinColumn(name = "statistics_id")})
     private Set<Statistic> statistics = new HashSet<>();
 
-    public void assignUser(User user) {
+    public void addUser(User user) {
         this.user = user;
-        user.setSite(this);
     }
 
     public void addUrl(Url url) {

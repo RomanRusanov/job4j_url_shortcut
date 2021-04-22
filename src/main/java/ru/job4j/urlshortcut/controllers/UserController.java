@@ -49,14 +49,15 @@ public class UserController {
         String username = this.userService.getNewLogin();
         String password = this.userService.getUniqueString();
         Long authorityId = this.authorityService.getAuthorityByAuthority("ROLE_USER").getId();
+        site = this.siteService.save(site);
         User user = User.builder()
                 .site(site)
                 .username(username)
                 .password(encoder.encode(password))
                 .authorityId(authorityId)
                 .build();
-        site.assignUser(user);
-        this.userService.save(user);
+        user = this.userService.save(user);
+        site.addUser(user);
         this.siteService.save(site);
         return new ResponseEntity<>(
                 new Registration(true, username, password),

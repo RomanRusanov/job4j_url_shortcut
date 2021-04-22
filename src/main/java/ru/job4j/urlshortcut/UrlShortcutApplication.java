@@ -20,10 +20,11 @@ public class UrlShortcutApplication {
     }
 
     @Bean
-    public SpringLiquibase liquibase(DataSource ds) {
+    public SpringLiquibase liquibase(DataSource ds, @Value("${spring.liquibase.enabled}") boolean isEnabled) {
         SpringLiquibase liquibase = new SpringLiquibase();
         liquibase.setChangeLog("classpath:liquibase-changeLog.xml");
         liquibase.setDataSource(ds);
+        liquibase.setShouldRun(isEnabled);
         return liquibase;
     }
 

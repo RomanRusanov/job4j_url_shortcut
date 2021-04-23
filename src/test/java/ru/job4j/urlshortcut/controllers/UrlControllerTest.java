@@ -9,7 +9,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import ru.job4j.urlshortcut.domain.Url;
@@ -32,14 +31,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest()
 @AutoConfigureMockMvc
-@ActiveProfiles("postgresql")
 class UrlControllerTest {
 
     @Autowired
-    MockMvc mockMvc;
+    private MockMvc mockMvc;
 
     @MockBean
-    UrlController urlController;
+    private UrlController urlController;
 
     private String authenticateAndGetJWTToken() throws Exception {
         String username = "89eeb9bc-ddaa-452c-9ea3-6ebf60d05e4b";

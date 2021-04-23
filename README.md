@@ -41,7 +41,6 @@ Authorization: Bearer e25d31c5-db66-4cf2-85d4-8faa8c544ad6
 
 ![image](screenShots/Screenshot_2.png)
 
-
 ###3. Регистрация URL.
 
 Поле того, как пользователь зарегистрировал свой сайт он может отправлять на сайт ссылки и получать преобразованные ссылки.
@@ -69,7 +68,6 @@ C телом JSON объекта.
 
 ![image](screenShots/Screenshot_3.png)
 
-
 ###4. Переадресация. Выполняется без авторизации.
 
 Когда сайт отправляет ссылку с кодом в ответ нужно вернуть ассоциированный адрес и статус 302.
@@ -84,7 +82,6 @@ HTTP CODE - 302 REDIRECT URL
 
 ![image](screenShots/Screenshot_4.png)
 
-
 ###5. Статистика.
 
 В сервисе считается количество вызовов каждого адреса.
@@ -97,3 +94,12 @@ GET /statistic
 Ответ от сервера JSON.
 
 ![image](screenShots/Screenshot_5.png)
+
+#Конфигурирование:
+
+*   необходима заполнить (пользователя, пароль и имя бд)```src/main/resources/app.properties```
+    схема бд будет создана при помощи liquibase
+
+##Контакты:
+*   skype: rusanov_roman
+*   telegram: @Roman_Rusanov

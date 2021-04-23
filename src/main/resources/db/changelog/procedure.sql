@@ -1,8 +1,9 @@
-create procedure updateStatistic(INOUT urlId bigint)
+create or replace function updateStatistic(inout urlId bigint)
 as
 $$
 update statistics
-SET total_calls = total_calls + 1
-where url_id = urlId returning url_id;
+set total_calls = total_calls + 1
+where url_id = urlId
+returning urlId;
 $$
     language sql;

@@ -1,9 +1,8 @@
-create or replace function updateStatistic(inout urlId bigint)
+create function updateStatistic(INOUT urlId bigint)
 as
 $$
 update statistics
-set total_calls = total_calls + 1
-where url_id = urlId
-returning urlId;
+SET total_calls = total_calls + 1
+where url_id = urlId returning url_id;
 $$
     language sql;
